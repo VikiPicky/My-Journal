@@ -5,6 +5,9 @@ namespace My_Journal
 {
     public partial class LoginForm : Form
     {
+
+        private int logInAttemptCount = 0;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -62,17 +65,33 @@ namespace My_Journal
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            if (table.Rows.Count > 0) { 
+            if (table.Rows.Count > 0)
+            {
                 this.Hide();
                 MainForm mainForm = new MainForm();
                 mainForm.Show();
-            }               
+            }
 
             else
+
                 MessageBox.Show("Incorrect user details");
-
-
+                LogInAttemptCounting();
         }
+
+        public void LogInAttemptCounting() {
+                        
+            logInAttemptCount += 1;
+
+            if (logInAttemptCount >= 3)
+            {
+                MessageBox.Show("You have exceeded the maximum number of attempts", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                RegisterButton.Enabled = false;
+                passField.Enabled = false;
+                emailField.Enabled = false;
+                passField.ForeColor = Color.Red;
+                emailField.ForeColor = Color.Red;
+            }
+    }
 
         private void label1_Click(object sender, EventArgs e)
         {

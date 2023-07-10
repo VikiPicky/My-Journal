@@ -28,7 +28,7 @@ namespace My_Journal
             DB db = new DB();
             MySqlCommand command = new MySqlCommand("INSERT INTO `record` (`record`, `date`) VALUES (@record, @date);", db.getConnection());
             command.Parameters.Add("@record", MySqlDbType.VarChar).Value = recordField.Text;
-            command.Parameters.Add("@date", MySqlDbType.VarChar).Value = dateField.Text;
+            command.Parameters.Add("@date", MySqlDbType.VarChar).Value = textBox1.Text;
 
             db.openConnection();
 
@@ -42,9 +42,11 @@ namespace My_Journal
 
         private void viewEntries_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            RecordTable recordTable = new RecordTable();
-            recordTable.Show();
+            {
+                this.Hide();
+                RecordTable recordTable = new RecordTable();
+                recordTable.Show();
+            }
         }
     }
 }

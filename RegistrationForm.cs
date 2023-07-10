@@ -21,6 +21,9 @@ namespace My_Journal
             nameField.Text = "add name";
             nameField.ForeColor = Color.Red;
 
+            passField.Text = "1 upper-case, 1 lower-case, 1 digit";
+            passField.ForeColor = Color.Red;
+
             ProgramField.Text = "name of your program";
             ProgramField.ForeColor = Color.Red;
 
@@ -122,6 +125,14 @@ namespace My_Journal
             if (!ValidateEmail())
                 return;
 
+
+            string passwordValidationResult = PasswordValidator.GetPasswordValidationErrorMessage(passField.Text);
+            if (passwordValidationResult != null)
+            {
+                MessageBox.Show(passwordValidationResult);
+                return;
+            }
+
             DB db = new DB();
             MySqlCommand command = new MySqlCommand("INSERT INTO `user` (`name`, `program`, `email`, `password`) VALUES (@name, @program, @email, @password);", db.getConnection());
             command.Parameters.Add("@name", MySqlDbType.VarChar).Value = nameField.Text;
@@ -140,7 +151,8 @@ namespace My_Journal
 
         }
 
-        public Boolean ValidateEmail() {
+        public Boolean ValidateEmail()
+        {
 
             string address = emailField.Text;
             string host = address.Split('@')[1];
@@ -150,7 +162,8 @@ namespace My_Journal
                 MessageBox.Show("Welcome to Algonquin Student");
                 return true;
             }
-            else {
+            else
+            {
                 MessageBox.Show("Only available to Algonquin Student");
                 return false;
             }

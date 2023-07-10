@@ -32,6 +32,7 @@
             label1 = new Label();
             panel2 = new Panel();
             panel1 = new Panel();
+            BackToLoginLabel = new Label();
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox1 = new PictureBox();
@@ -41,7 +42,6 @@
             RegistrationButton = new Button();
             passField = new TextBox();
             pictureBox2 = new PictureBox();
-            BackToLoginLabel = new Label();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -57,7 +57,7 @@
             closeButton.Cursor = Cursors.Hand;
             closeButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             closeButton.ForeColor = SystemColors.ActiveCaptionText;
-            closeButton.Location = new Point(777, 0);
+            closeButton.Location = new Point(1552, 9);
             closeButton.Name = "closeButton";
             closeButton.Size = new Size(30, 32);
             closeButton.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             label1.Font = new Font("Showcard Gothic", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.Purple;
-            label1.Location = new Point(151, 25);
+            label1.Location = new Point(530, 61);
             label1.Name = "label1";
             label1.Size = new Size(541, 88);
             label1.TabIndex = 0;
@@ -82,7 +82,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(828, 200);
+            panel2.Size = new Size(1585, 200);
             panel2.TabIndex = 0;
             // 
             // panel1
@@ -102,8 +102,20 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(828, 973);
+            panel1.Size = new Size(1585, 973);
             panel1.TabIndex = 2;
+            // 
+            // BackToLoginLabel
+            // 
+            BackToLoginLabel.AutoSize = true;
+            BackToLoginLabel.BackColor = Color.IndianRed;
+            BackToLoginLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            BackToLoginLabel.Location = new Point(947, 797);
+            BackToLoginLabel.Name = "BackToLoginLabel";
+            BackToLoginLabel.Size = new Size(180, 32);
+            BackToLoginLabel.TabIndex = 3;
+            BackToLoginLabel.Text = "Back to Login?";
+            BackToLoginLabel.Click += BackToLoginLabel_Click;
             // 
             // pictureBox4
             // 
@@ -141,7 +153,7 @@
             emailField.Location = new Point(179, 493);
             emailField.Multiline = true;
             emailField.Name = "emailField";
-            emailField.Size = new Size(474, 91);
+            emailField.Size = new Size(1092, 91);
             emailField.TabIndex = 8;
             emailField.Enter += emailField_Enter;
             emailField.Leave += emailField_Leave;
@@ -152,7 +164,7 @@
             ProgramField.Location = new Point(179, 383);
             ProgramField.Multiline = true;
             ProgramField.Name = "ProgramField";
-            ProgramField.Size = new Size(474, 91);
+            ProgramField.Size = new Size(1092, 91);
             ProgramField.TabIndex = 2;
             ProgramField.Enter += ProgramField_Enter;
             ProgramField.Leave += ProgramField_Leave;
@@ -163,7 +175,7 @@
             nameField.Location = new Point(179, 276);
             nameField.Multiline = true;
             nameField.Name = "nameField";
-            nameField.Size = new Size(474, 91);
+            nameField.Size = new Size(1092, 91);
             nameField.TabIndex = 6;
             nameField.Enter += nameField_Enter;
             nameField.Leave += nameField_Leave;
@@ -177,7 +189,7 @@
             RegistrationButton.FlatAppearance.MouseOverBackColor = Color.Red;
             RegistrationButton.FlatStyle = FlatStyle.Flat;
             RegistrationButton.Font = new Font("Sigmar One", 17.9999981F, FontStyle.Regular, GraphicsUnit.Point);
-            RegistrationButton.Location = new Point(274, 781);
+            RegistrationButton.Location = new Point(451, 757);
             RegistrationButton.Name = "RegistrationButton";
             RegistrationButton.Size = new Size(299, 96);
             RegistrationButton.TabIndex = 2;
@@ -190,7 +202,7 @@
             passField.Font = new Font("Sigmar One", 13.875F, FontStyle.Regular, GraphicsUnit.Point);
             passField.Location = new Point(179, 628);
             passField.Name = "passField";
-            passField.Size = new Size(474, 68);
+            passField.Size = new Size(1092, 68);
             passField.TabIndex = 4;
             passField.UseSystemPasswordChar = true;
             // 
@@ -204,23 +216,11 @@
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
             // 
-            // BackToLoginLabel
-            // 
-            BackToLoginLabel.AutoSize = true;
-            BackToLoginLabel.BackColor = Color.IndianRed;
-            BackToLoginLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            BackToLoginLabel.Location = new Point(321, 898);
-            BackToLoginLabel.Name = "BackToLoginLabel";
-            BackToLoginLabel.Size = new Size(180, 32);
-            BackToLoginLabel.TabIndex = 3;
-            BackToLoginLabel.Text = "Back to Login?";
-            BackToLoginLabel.Click += BackToLoginLabel_Click;
-            // 
             // RegistrationForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(828, 973);
+            ClientSize = new Size(1585, 973);
             Controls.Add(panel1);
             Name = "RegistrationForm";
             Text = "RegistrationForm";

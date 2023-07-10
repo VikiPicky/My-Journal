@@ -68,7 +68,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(817, 786);
+            panel1.Size = new Size(1180, 786);
             panel1.TabIndex = 1;
             panel1.MouseDown += panel1_MouseDown;
             panel1.MouseMove += panel1_MouseMove;
@@ -108,7 +108,7 @@
             passField.Font = new Font("Sigmar One", 13.875F, FontStyle.Regular, GraphicsUnit.Point);
             passField.Location = new Point(192, 386);
             passField.Name = "passField";
-            passField.Size = new Size(474, 68);
+            passField.Size = new Size(712, 68);
             passField.TabIndex = 4;
             passField.UseSystemPasswordChar = true;
             // 
@@ -128,7 +128,7 @@
             emailField.Location = new Point(192, 267);
             emailField.Multiline = true;
             emailField.Name = "emailField";
-            emailField.Size = new Size(474, 91);
+            emailField.Size = new Size(712, 91);
             emailField.TabIndex = 2;
             // 
             // pictureBox1
@@ -149,7 +149,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(817, 200);
+            panel2.Size = new Size(1180, 200);
             panel2.TabIndex = 0;
             // 
             // closeButton
@@ -159,7 +159,7 @@
             closeButton.Cursor = Cursors.Hand;
             closeButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             closeButton.ForeColor = SystemColors.ActiveCaptionText;
-            closeButton.Location = new Point(777, 0);
+            closeButton.Location = new Point(1109, 9);
             closeButton.Name = "closeButton";
             closeButton.Size = new Size(30, 32);
             closeButton.TabIndex = 1;
@@ -184,7 +184,7 @@
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(817, 786);
+            ClientSize = new Size(1180, 786);
             Controls.Add(panel1);
             Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.None;
