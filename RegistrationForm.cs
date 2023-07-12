@@ -122,11 +122,15 @@ namespace My_Journal
             if (UserExists())
                 return;
 
-            if (!ValidateEmail())
+            if (!CredentialsValidator.ValidateEmail(emailField.Text))
+            {
+                MessageBox.Show("Only available to Algonquin Student");
                 return;
+            }
+            MessageBox.Show("Welcome to Algonquin Student");
 
 
-            string passwordValidationResult = PasswordValidator.GetPasswordValidationErrorMessage(passField.Text);
+            string passwordValidationResult = CredentialsValidator.GetPasswordValidationErrorMessage(passField.Text);
             if (passwordValidationResult != null)
             {
                 MessageBox.Show(passwordValidationResult);
@@ -149,24 +153,6 @@ namespace My_Journal
 
             db.closeConnection();
 
-        }
-
-        public Boolean ValidateEmail()
-        {
-
-            string address = emailField.Text;
-            string host = address.Split('@')[1];
-
-            if (host == "algonquinlive.com")
-            {
-                MessageBox.Show("Welcome to Algonquin Student");
-                return true;
-            }
-            else
-            {
-                MessageBox.Show("Only available to Algonquin Student");
-                return false;
-            }
         }
 
         public void checkEmptyFields()

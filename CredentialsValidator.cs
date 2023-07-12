@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace My_Journal
 {
-    public static class PasswordValidator
+    public static class CredentialsValidator
     {
 
         const int NUM_UPPER_LETTERS = 1;
         const int NUM_LOWER_LETTERS = 1;
         const  int NUM_DIGITS = 1;
-        
+
+        public static Boolean ValidateEmail(string emailAddress)
+        {
+
+            return emailAddress.Split('@')[1] == "algonquinlive.com";
+        }
+
 
         public static string GetPasswordValidationErrorMessage(String password)
         {
