@@ -14,8 +14,8 @@ namespace My_Journal
                 
             String createDatabaseCommand = string.Format("CREATE SCHEMA IF NOT EXISTS myjournal; " +
             "USE myjournal;" +
-            "CREATE TABLE IF NOT EXISTS `record` (`id` int(10) UNSIGNED NOT NULL, `record` varchar(100) NOT NULL,  `date` date NOT NULL) ;" +
-            "CREATE TABLE IF NOT EXISTS `user` (`id` int(10) UNSIGNED NOT NULL, `name` varchar(50) NOT NULL, `program` varchar(60) NOT NULL, `email` varchar(50) NOT NULL,`password` varchar(15) NOT NULL);");
+            "CREATE TABLE IF NOT EXISTS `record` (`id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, `record` varchar(100) NOT NULL,  `date` date NOT NULL, PRIMARY KEY (id)) ;" +
+            "CREATE TABLE IF NOT EXISTS `user` (`id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, `name` varchar(50) NOT NULL, `program` varchar(60) NOT NULL, `email` varchar(50) NOT NULL,`password` varchar(15) NOT NULL , PRIMARY KEY (id));");
 
         public void openConnection() {
             //if (connection.State == System.Data.ConnectionState.Closed)
